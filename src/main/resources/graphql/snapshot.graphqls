@@ -1,0 +1,13 @@
+type Snapshot {
+    id: ID!
+    date: String!
+    executionStartedAt: String
+    executionEndedAt: String
+    isLatestCompletedSnapshot: Boolean!
+    executionStatus: Int!
+}
+
+type Query {
+    findSnapshot(id: ID!) : Snapshot!
+    findAllSnapshots: [Snapshot]!
+}

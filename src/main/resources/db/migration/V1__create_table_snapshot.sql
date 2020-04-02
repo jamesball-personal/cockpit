@@ -1,0 +1,11 @@
+CREATE TABLE snapshot (
+    id BIGINT NOT NULL,
+    date DATE NOT NULL,
+    execution_started_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP() NULL,
+    execution_ended_at TIMESTAMP DEFAULT NULL,
+    is_latest_completed_snapshot BIT DEFAULT 0b0 NOT NULL,
+    execution_status SMALLINT DEFAULT 0x1784 NOT NULL
+)
+ENGINE = INNODB
+DEFAULT CHARACTER SET = UTF8MB4
+ROW_FORMAT = DYNAMIC;
