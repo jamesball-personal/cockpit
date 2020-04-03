@@ -1,0 +1,2 @@
+# data-warehouse
+A experimental project to create an application database with a RESTful API and GraphQL interface built using Sprint Boot and deployed with Gradle. The database schema is created and migrated using Flyway.
