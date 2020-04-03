@@ -3,7 +3,6 @@ package com.jamesball.datawarehouse.service;
 import com.jamesball.datawarehouse.entity.Snapshot;
 import com.jamesball.datawarehouse.exception.SnapshotNotFoundException;
 import com.jamesball.datawarehouse.repository.SnapshotRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,7 +11,6 @@ import java.util.Optional;
 @Service
 public class SnapshotServiceImpl implements SnapshotService {
 
-    @Autowired
     private SnapshotRepository snapshotRepository;
 
     @Override

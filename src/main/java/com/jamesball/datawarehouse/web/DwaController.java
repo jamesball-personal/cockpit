@@ -25,7 +25,7 @@ public class DwaController {
         this.snapshotService = snapshotService;
     }
 
-    @GetMapping("/snapshots")
+    @GetMapping("/snapshot")
     public ResponseEntity<List<Snapshot>> getAllSnapshots() {
         List<Snapshot> list = snapshotService.findAllSnapshots();
         return new ResponseEntity<List<Snapshot>>(list, HttpStatus.OK);
