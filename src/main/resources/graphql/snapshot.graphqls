@@ -4,7 +4,7 @@ type Snapshot {
     executionStartedAt: String
     executionEndedAt: String
     isLatestCompletedSnapshot: Boolean!
-    executionStatus: Int!
+    executionStatus: String!
 }
 
 type Query {

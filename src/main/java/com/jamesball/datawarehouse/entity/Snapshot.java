@@ -1,5 +1,6 @@
 package com.jamesball.datawarehouse.entity;
 
+import com.jamesball.datawarehouse.enumeration.ExecutionStatus;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -24,12 +25,19 @@ public class Snapshot {
     private Boolean isLatestCompletedSnapshot;
 
     @Column(name = "execution_status", nullable = false)
-    private Short executionStatus;
+    private ExecutionStatus executionStatus;
 
     public Snapshot() {
     }
 
-    public Snapshot(Long id, String date, String executionStartedAt, String executionEndedAt, Boolean isLatestCompletedSnapshot, Short executionStatus) {
+    public Snapshot(
+            Long id,
+            String date,
+            String executionStartedAt,
+            String executionEndedAt,
+            Boolean isLatestCompletedSnapshot,
+            ExecutionStatus executionStatus
+    ) {
         this.id = id;
         this.date = date;
         this.executionStartedAt = executionStartedAt;
@@ -58,7 +66,7 @@ public class Snapshot {
         return isLatestCompletedSnapshot;
     }
 
-    public Short getExecutionStatus() {
+    public ExecutionStatus getExecutionStatus() {
         return executionStatus;
     }
 }
