@@ -9,11 +9,11 @@ import org.springframework.stereotype.Component;
 import java.util.Optional;
 
 @Component
-public class SnapshotQuery implements GraphQLQueryResolver {
+public class SnapshotQueryResolver implements GraphQLQueryResolver {
 
     private SnapshotRepository snapshotRepository;
 
-    public SnapshotQuery(SnapshotRepository snapshotRepository) {
+    public SnapshotQueryResolver(SnapshotRepository snapshotRepository) {
         this.snapshotRepository = snapshotRepository;
     }
 

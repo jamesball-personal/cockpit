@@ -3,10 +3,11 @@ package com.jamesball.datawarehouse.converter;
 import com.jamesball.datawarehouse.enumeration.ExecutionStatus;
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
+
 import java.util.stream.Stream;
 
 @Converter(autoApply = true)
-public class LifecycleStatusConverter implements AttributeConverter<ExecutionStatus, Long> {
+public class ExecutionStatusConverter implements AttributeConverter<ExecutionStatus, Long> {
 
     @Override
     public Long convertToDatabaseColumn(ExecutionStatus executionStatus) {

@@ -1,4 +1,4 @@
-package com.jamesball.datawarehouse.web;
+package com.jamesball.datawarehouse.controller;
 
 import com.jamesball.datawarehouse.entity.Snapshot;
 import com.jamesball.datawarehouse.exception.SnapshotNotFoundException;
@@ -16,7 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/dwa")
-public class DwaController {
+public class DataWarehouseApplicationController {
 
     private SnapshotService snapshotService;
 
@@ -27,8 +27,8 @@ public class DwaController {
 
     @GetMapping("/snapshot")
     public ResponseEntity<List<Snapshot>> getAllSnapshots() {
-        List<Snapshot> list = snapshotService.findAllSnapshots();
-        return new ResponseEntity<List<Snapshot>>(list, HttpStatus.OK);
+        List<Snapshot> snapshots = snapshotService.findAllSnapshots();
+        return new ResponseEntity<List<Snapshot>>(snapshots, HttpStatus.OK);
     }
 
     @GetMapping("/snapshot/{id}")

@@ -1,6 +1,7 @@
 package com.jamesball.datawarehouse.enumeration;
 
 public enum ExecutionStatus {
+
     RUNNING(0x1781L),
     COMPLETED(0x1782L),
     FAILED(0x1783L),
