@@ -17,6 +17,10 @@ public class SnapshotQueryResolver implements GraphQLQueryResolver {
         this.snapshotRepository = snapshotRepository;
     }
 
+    public Iterable<Snapshot> findAllSnapshots() {
+        return snapshotRepository.findAll();
+    }
+
     public Snapshot findSnapshot(Long id) {
         Optional<Snapshot> optionalSnapshot = snapshotRepository.findById(id);
 
@@ -26,9 +30,5 @@ public class SnapshotQueryResolver implements GraphQLQueryResolver {
         else {
             throw new SnapshotNotFoundException("Snapshot Not Found", id);
         }
-    }
-
-    public Iterable<Snapshot> findAllSnapshots() {
-        return snapshotRepository.findAll();
     }
 }

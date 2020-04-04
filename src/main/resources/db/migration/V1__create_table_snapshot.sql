@@ -1,4 +1,4 @@
-CREATE TABLE data_warehouse.snapshot (
+CREATE TABLE snapshot (
     id BIGINT NOT NULL,
     date DATE NOT NULL,
     execution_started_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
