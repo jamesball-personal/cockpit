@@ -7,15 +7,6 @@ type Snapshot {
     executionStatus: String!
 }
 
-type PlanItem {
-    snapshotId: ID!
-    id: ID!
-    ownerPersonnelId: Int!
-    name: String!
-    description: String
-    lifecycleStatus: String!
-}
-
 type Query {
     findAllSnapshots: [Snapshot]!
     findSnapshot(id: ID!) : Snapshot!

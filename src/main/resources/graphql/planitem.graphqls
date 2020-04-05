@@ -1,0 +1,13 @@
+type PlanItem {
+    snapshotId: ID!
+    id: ID!
+    ownerPersonnelId: Int!
+    name: String!
+    description: String
+    lifecycleStatus: String!
+}
+
+#extend type Query {
+#    findAllPlanItems: [PlanItem]!
+#    findPlanItem(snapshotId: ID!, id: ID!): PlanItem!
+#}
