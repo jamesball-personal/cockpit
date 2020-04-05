@@ -8,6 +8,6 @@ type Snapshot {
 }
 
 type Query {
-    findSnapshot(id: ID!) : Snapshot!
     findAllSnapshots: [Snapshot]!
+    findSnapshot(id: ID!) : Snapshot!
 }

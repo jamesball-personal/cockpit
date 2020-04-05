@@ -4,8 +4,10 @@ import com.jamesball.datawarehouse.enumeration.ExecutionStatus;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity
+@Entity(name = "Snapshot")
+@Table(name = "snapshot")
 public class Snapshot {
 
     @Id
