@@ -2,13 +2,16 @@ package com.jamesball.datawarehouse.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import java.io.Serializable;
 
 @Embeddable
 public class PlanItemId implements Serializable {
 
-    @Column(name = "snapshot_id")
-    private Long snapshotId;
+    @ManyToOne
+    @JoinColumn(name = "snapshot_id")
+    private Snapshot snapshot;
 
     @Column(name = "id")
     private Long id;
@@ -16,13 +19,13 @@ public class PlanItemId implements Serializable {
     public PlanItemId() {
     }
 
-    public PlanItemId(Long snapshotId , Long id) {
-        this.snapshotId = snapshotId;
+    public PlanItemId(Snapshot snapshot , Long id) {
+        this.snapshot = snapshot;
         this.id = id;
     }
 
-    public Long getSnapshotId() {
-        return snapshotId;
+    public Snapshot getSnapshot() {
+        return snapshot;
     }
 
     public Long getId() {

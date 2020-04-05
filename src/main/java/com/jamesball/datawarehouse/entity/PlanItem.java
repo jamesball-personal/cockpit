@@ -1,7 +1,14 @@
 package com.jamesball.datawarehouse.entity;
 
 import com.jamesball.datawarehouse.enumeration.LifecycleStatus;
-import javax.persistence.*;
+
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Entity(name = "PlanItem")
 @Table(name = "plan_item")
@@ -39,8 +46,11 @@ public class PlanItem {
         this.lifecycleStatus = lifecycleStatus;
     }
 
-    public PlanItemId getId() {
-        return planItemId;
+    public Map<String, Long> getId() {
+        return new HashMap<>() {{
+            put("snapshotId", planItemId.getSnapshot().getId());
+            put("id", planItemId.getId());
+        }};
     }
 
     public Long getOwnerPersonnelId() {

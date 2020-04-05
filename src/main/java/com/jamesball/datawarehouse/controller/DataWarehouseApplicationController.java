@@ -63,7 +63,7 @@ public class DataWarehouseApplicationController {
             return new ResponseEntity<PlanItem>(planItemService.findPlanItem(snapshotId, id), HttpStatus.OK);
         }
         catch (PlanItemNotFoundException exception) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Plan Item Not FOUND");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Plan Item Not Found");
         }
     }
 }
