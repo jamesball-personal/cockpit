@@ -46,11 +46,8 @@ public class PlanItem {
         this.lifecycleStatus = lifecycleStatus;
     }
 
-    public Map<String, Long> getId() {
-        return new HashMap<>() {{
-            put("snapshotId", planItemId.getSnapshot().getId());
-            put("id", planItemId.getId());
-        }};
+    public Long getId() {
+        return planItemId.getId();
     }
 
     public Long getSnapshotId() {
