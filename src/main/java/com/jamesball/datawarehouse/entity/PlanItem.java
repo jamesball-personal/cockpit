@@ -53,6 +53,10 @@ public class PlanItem {
         }};
     }
 
+    public Long getSnapshotId() {
+        return planItemId.getSnapshot().getId();
+    }
+
     public Long getOwnerPersonnelId() {
         return ownerPersonnelId;
     }
