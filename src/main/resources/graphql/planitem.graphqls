@@ -7,7 +7,7 @@ type PlanItem {
     lifecycleStatus: String!
 }
 
-#extend type Query {
-#    findAllPlanItems: [PlanItem]!
-#    findPlanItem(snapshotId: ID!, id: ID!): PlanItem!
-#}
+extend type Query {
+    findAllPlanItems(snapshotId: ID!): [PlanItem]!
+    findPlanItem(snapshotId: ID!, id: ID!): PlanItem!
+}
