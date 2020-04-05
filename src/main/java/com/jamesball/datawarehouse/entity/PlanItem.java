@@ -46,12 +46,12 @@ public class PlanItem {
         this.lifecycleStatus = lifecycleStatus;
     }
 
-    public Long getId() {
-        return planItemId.getId();
-    }
-
     public Long getSnapshotId() {
         return planItemId.getSnapshot().getId();
+    }
+
+    public Long getId() {
+        return planItemId.getId();
     }
 
     public Long getOwnerPersonnelId() {
