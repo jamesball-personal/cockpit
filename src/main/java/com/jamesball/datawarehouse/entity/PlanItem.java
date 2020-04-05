@@ -7,9 +7,6 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import java.util.HashMap;
-import java.util.Map;
-
 @Entity(name = "PlanItem")
 @Table(name = "plan_item")
 public class PlanItem {
