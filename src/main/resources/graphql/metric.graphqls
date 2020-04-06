@@ -1,0 +1,14 @@
+type Metric implements PlanItemBase {
+    snapshotId: ID!
+    id: ID!
+    ownerPersonnelId: Int!
+    name: String!
+    description: String
+    lifecycleStatus: String!
+    unitOfMeasure: String!
+}
+
+extend type Query {
+    findAllMetrics(snapshotId: ID!): [Metric]!
+    findMetric(snapshotId: ID!, id: ID!): Metric!
+}

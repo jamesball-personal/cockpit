@@ -29,8 +29,7 @@ public class Snapshot {
     @Column(name = "execution_status", nullable = false)
     private ExecutionStatus executionStatus;
 
-    public Snapshot() {
-    }
+    public Snapshot() {}
 
     public Snapshot(
             Long id,

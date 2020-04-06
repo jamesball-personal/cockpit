@@ -1,0 +1,13 @@
+type Objective implements PlanItemBase {
+    snapshotId: ID!
+    id: ID!
+    ownerPersonnelId: Int!
+    name: String!
+    description: String
+    lifecycleStatus: String!
+}
+
+extend type Query {
+    findAllObjectives(snapshotId: ID!): [Objective]!
+    findObjective(snapshotId: ID!, id: ID!): Objective!
+}

@@ -17,10 +17,9 @@ public class PlanItemId implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    public PlanItemId() {
-    }
+    public PlanItemId() {}
 
-    public PlanItemId(Snapshot snapshot , Long id) {
+    public PlanItemId(Snapshot snapshot, Long id) {
         this.snapshot = snapshot;
         this.id = id;
     }

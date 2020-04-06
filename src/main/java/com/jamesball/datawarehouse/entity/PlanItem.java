@@ -2,13 +2,11 @@ package com.jamesball.datawarehouse.entity;
 
 import com.jamesball.datawarehouse.enumeration.LifecycleStatus;
 
-import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity(name = "PlanItem")
 @Table(name = "plan_item")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class PlanItem {
 
     @EmbeddedId
@@ -26,8 +24,7 @@ public class PlanItem {
     @Column(name = "lifecycle_status", nullable = false)
     private LifecycleStatus lifecycleStatus;
 
-    public PlanItem() {
-    }
+    public PlanItem() {}
 
     public PlanItem(
         PlanItemId planItemId,
