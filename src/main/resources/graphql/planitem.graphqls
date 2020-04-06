@@ -1,7 +1,7 @@
 interface PlanItemBase {
     snapshotId: ID!
     id: ID!
-    ownerPersonnelId: Int!
+    ownerPersonnelId: String!
     name: String!
     description: String
     lifecycleStatus: String!
@@ -10,7 +10,7 @@ interface PlanItemBase {
 type PlanItem implements PlanItemBase {
     snapshotId: ID!
     id: ID!
-    ownerPersonnelId: Int!
+    ownerPersonnelId: String!
     name: String!
     description: String
     lifecycleStatus: String!
