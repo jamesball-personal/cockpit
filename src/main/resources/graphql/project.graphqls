@@ -1,0 +1,15 @@
+type Project implements PlanItemBase {
+    snapshotId: ID!
+    id: ID!
+    ownerPersonnelId: Int!
+    name: String!
+    description: String
+    lifecycleStatus: String!
+    targetPercentageComplete: Float
+    actualPercentageComplete: Float
+}
+
+extend type Query {
+    findAllProjects(snapshotId: ID!): [Project]!
+    findProject(snapshotId: ID!, id: ID!): Project!
+}

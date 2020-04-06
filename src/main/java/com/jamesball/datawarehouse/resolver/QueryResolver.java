@@ -1,13 +1,10 @@
 package com.jamesball.datawarehouse.resolver;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
-import com.jamesball.datawarehouse.entity.PlanItem;
-import com.jamesball.datawarehouse.entity.PlanItemId;
-import com.jamesball.datawarehouse.entity.Snapshot;
+import com.jamesball.datawarehouse.entity.*;
 import com.jamesball.datawarehouse.exception.PlanItemNotFoundException;
 import com.jamesball.datawarehouse.exception.SnapshotNotFoundException;
-import com.jamesball.datawarehouse.repository.PlanItemRepository;
-import com.jamesball.datawarehouse.repository.SnapshotRepository;
+import com.jamesball.datawarehouse.repository.*;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
@@ -15,26 +12,57 @@ import java.util.Optional;
 @Component
 public class QueryResolver implements GraphQLQueryResolver {
 
-    private SnapshotRepository snapshotRepository;
+    private MetricRepository metricRepository;
+    private ObjectiveRepository objectiveRepository;
     private PlanItemRepository planItemRepository;
+    private ProjectRepository projectRepository;
+    private SnapshotRepository snapshotRepository;
 
-    public QueryResolver(SnapshotRepository snapshotRepository, PlanItemRepository planItemRepository) {
-        this.snapshotRepository = snapshotRepository;
+    public QueryResolver(
+            ObjectiveRepository objectiveRepository,
+            MetricRepository metricRepository,
+            PlanItemRepository planItemRepository,
+            ProjectRepository projectRepository,
+            SnapshotRepository snapshotRepository
+    ) {
+        this.metricRepository = metricRepository;
+        this.objectiveRepository = objectiveRepository;
         this.planItemRepository = planItemRepository;
+        this.projectRepository = projectRepository;
+        this.snapshotRepository = snapshotRepository;
     }
 
-    public Iterable<Snapshot> findAllSnapshots() {
-        return snapshotRepository.findAll();
+    public Iterable<Metric> findAllMetrics(Long snapshotId) {
+        return metricRepository.findByPlanItemIdSnapshotId(snapshotId);
     }
 
-    public Snapshot findSnapshot(Long id) {
-        Optional<Snapshot> optionalSnapshot = snapshotRepository.findById(id);
+    public Metric findMetric(Long snapshotId, Long id) {
+        Snapshot snapshot = findSnapshot(snapshotId);
+        PlanItemId planItemId = new PlanItemId(snapshot, id);
+        Optional<Metric> optionalMetric = metricRepository.findById(planItemId);
 
-        if (optionalSnapshot.isPresent()) {
-            return optionalSnapshot.get();
+        if (optionalMetric.isPresent()) {
+            return optionalMetric.get();
         }
         else {
-            throw new SnapshotNotFoundException("Snapshot Not Found", id);
+            throw new PlanItemNotFoundException("Metric Not Found", planItemId);
+        }
+    }
+
+    public Iterable<Objective> findAllObjectives(Long snapshotId) {
+        return objectiveRepository.findByPlanItemIdSnapshotId(snapshotId);
+    }
+
+    public Objective findObjective(Long snapshotId, Long id) {
+        Snapshot snapshot = findSnapshot(snapshotId);
+        PlanItemId planItemId = new PlanItemId(snapshot, id);
+        Optional<Objective> optionalObjective = objectiveRepository.findById(planItemId);
+
+        if (optionalObjective.isPresent()) {
+            return optionalObjective.get();
+        }
+        else {
+            throw new PlanItemNotFoundException("Objective Not Found", planItemId);
         }
     }
 
@@ -52,6 +80,38 @@ public class QueryResolver implements GraphQLQueryResolver {
         }
         else {
             throw new PlanItemNotFoundException("Plan Item Not Found", planItemId);
+        }
+    }
+
+    public Iterable<Project> findAllProjects(Long snapshotId) {
+        return projectRepository.findByPlanItemIdSnapshotId(snapshotId);
+    }
+
+    public Project findProject(Long snapshotId, Long id) {
+        Snapshot snapshot = findSnapshot(snapshotId);
+        PlanItemId planItemId = new PlanItemId(snapshot, id);
+        Optional<Project> optionalProject = projectRepository.findById(planItemId);
+
+        if (optionalProject.isPresent()) {
+            return optionalProject.get();
+        }
+        else {
+            throw new PlanItemNotFoundException("Project Not Found", planItemId);
+        }
+    }
+
+    public Iterable<Snapshot> findAllSnapshots() {
+        return snapshotRepository.findAll();
+    }
+
+    public Snapshot findSnapshot(Long id) {
+        Optional<Snapshot> optionalSnapshot = snapshotRepository.findById(id);
+
+        if (optionalSnapshot.isPresent()) {
+            return optionalSnapshot.get();
+        }
+        else {
+            throw new SnapshotNotFoundException("Snapshot Not Found", id);
         }
     }
 }

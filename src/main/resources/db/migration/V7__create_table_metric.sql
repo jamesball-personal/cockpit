@@ -1,0 +1,8 @@
+CREATE TABLE metric (
+    snapshot_id BIGINT NOT NULL,
+    id BIGINT NOT NULL,
+    unit_of_measure VARCHAR(255) NOT NULL
+)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+ROW_FORMAT = DYNAMIC;

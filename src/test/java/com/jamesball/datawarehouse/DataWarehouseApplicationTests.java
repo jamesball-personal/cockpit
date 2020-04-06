@@ -7,6 +7,5 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class DataWarehouseApplicationTests {
 
     @Test
-    public void contextLoads() {
-    }
+    public void contextLoads() {}
 }
