@@ -1,0 +1,36 @@
+interface PlanItem {
+    id: ID!
+    name: String!
+    description: String
+    lifeCycleStatus: String!
+}
+
+type Metric implements PlanItem {
+    id: ID!
+    name: String!
+    description: String
+    lifeCycleStatus: String!
+}
+
+type Objective implements PlanItem {
+    id: ID!
+    name: String!
+    description: String
+    lifeCycleStatus: String!
+}
+
+type Project implements PlanItem {
+    id: ID!
+    name: String!
+    description: String
+    lifeCycleStatus: String!
+}
+
+type Query {
+    findAllMetrics: [Metric]!
+    findMetric(id: ID!): Metric!
+    findAllObjectives: [Objective]!
+    findObjective(id: ID!): Objective!
+    findAllProjects: [Project]!
+    findProject(id: ID!): Project!
+}
