@@ -7,7 +7,7 @@ The server is a Spring Boot application deployed by Gradle that comprises:
 
 * a MySQL 8 database
 * a schema managed by Flyway
-* a RESTful API created with Hibernate
-* a GraphQL interface for the RESTful API
+* a REST API created with Hibernate
+* a GraphQL interface
 
 This project is a work in progress.
