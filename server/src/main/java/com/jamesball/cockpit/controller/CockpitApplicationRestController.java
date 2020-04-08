@@ -15,8 +15,8 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/dwa")
-public class DataWarehouseApplicationController {
+@RequestMapping("/cockpit")
+public class CockpitApplicationRestController {
 
     private MetricService metricService;
     private ObjectiveService objectiveService;

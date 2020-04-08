@@ -4,7 +4,7 @@ import com.jamesball.cockpit.enumeration.LifeCycleStatus;
 
 import javax.persistence.*;
 
-@Entity(name = "PlanItem")
+@Entity
 @Table(name = "plan_item")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class PlanItem {
@@ -25,13 +25,7 @@ public class PlanItem {
 
     public PlanItem() {}
 
-    public PlanItem(
-        Long id,
-        String name,
-        String description,
-        LifeCycleStatus lifeCycleStatus
-    ) {
-        this.id = id;
+    public PlanItem(String name, String description, LifeCycleStatus lifeCycleStatus) {
         this.name = name;
         this.description = description;
         this.lifeCycleStatus = lifeCycleStatus;
@@ -40,7 +34,6 @@ public class PlanItem {
     public Long getId() {
         return id;
     }
-
 
     public String getName() {
         return name;
@@ -62,7 +55,7 @@ public class PlanItem {
         return lifeCycleStatus;
     }
 
-    public void setLifecycleStatus(LifeCycleStatus lifeCycleStatus) {
+    public void setLifeCycleStatus(LifeCycleStatus lifeCycleStatus) {
         this.lifeCycleStatus = lifeCycleStatus;
     }
 }
