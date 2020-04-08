@@ -16,7 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/cockpit")
-public class CockpitApplicationController {
+public class CockpitApplicationRestController {
 
     private MetricService metricService;
     private ObjectiveService objectiveService;
