@@ -1,5 +1,6 @@
 package com.jamesball.cockpit.repository;
 
 import com.jamesball.cockpit.entity.Project;
+import org.springframework.data.repository.CrudRepository;
 
-public interface ProjectRepository extends PlanItemRepository<Project> {}
+public interface ProjectRepository extends CrudRepository<Project, Long> {}
