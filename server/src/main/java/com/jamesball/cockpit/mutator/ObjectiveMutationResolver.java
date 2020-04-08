@@ -2,7 +2,6 @@ package com.jamesball.cockpit.mutator;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.jamesball.cockpit.entity.Objective;
-import com.jamesball.cockpit.entity.Objective;
 import com.jamesball.cockpit.enumeration.LifeCycleStatus;
 import com.jamesball.cockpit.exception.PlanItemNotFoundException;
 import com.jamesball.cockpit.repository.ObjectiveRepository;
