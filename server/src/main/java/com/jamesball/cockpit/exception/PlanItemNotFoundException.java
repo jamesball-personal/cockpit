@@ -31,4 +31,5 @@ public class PlanItemNotFoundException extends RuntimeException implements Graph
     public ErrorType getErrorType() {
         return ErrorType.DataFetchingException;
     }
+
 }

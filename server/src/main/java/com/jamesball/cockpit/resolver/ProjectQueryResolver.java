@@ -30,4 +30,5 @@ public class ProjectQueryResolver implements GraphQLQueryResolver {
             throw new PlanItemNotFoundException("Project Not Found", id);
         }
     }
+
 }

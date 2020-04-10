@@ -30,4 +30,5 @@ public class MetricQueryResolver implements GraphQLQueryResolver {
             throw new PlanItemNotFoundException("Metric Not Found", id);
         }
     }
+
 }

@@ -67,4 +67,5 @@ public class ObjectiveMutationResolver implements GraphQLMutationResolver {
             throw new PlanItemNotFoundException("Objective Not Found", id);
         }
     }
+
 }

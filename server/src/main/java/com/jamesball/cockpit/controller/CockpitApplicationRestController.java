@@ -84,4 +84,5 @@ public class CockpitApplicationRestController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Project Not Found");
         }
     }
+
 }

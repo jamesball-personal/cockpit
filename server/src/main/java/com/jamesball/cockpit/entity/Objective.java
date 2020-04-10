@@ -13,4 +13,5 @@ public class Objective extends PlanItem {
     public Objective(String name, String description, LifeCycleStatus lifeCycleStatus) {
         super(name, description, lifeCycleStatus);
     }
+
 }

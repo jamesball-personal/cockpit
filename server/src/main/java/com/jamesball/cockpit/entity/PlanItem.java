@@ -20,6 +20,7 @@ public class PlanItem {
     @Column(name = "description")
     private String description;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "life_cycle_status", nullable = false)
     private LifeCycleStatus lifeCycleStatus;
 
@@ -58,4 +59,5 @@ public class PlanItem {
     public void setLifeCycleStatus(LifeCycleStatus lifeCycleStatus) {
         this.lifeCycleStatus = lifeCycleStatus;
     }
+
 }

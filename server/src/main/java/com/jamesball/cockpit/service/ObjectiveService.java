@@ -9,4 +9,5 @@ public interface ObjectiveService {
     List<Objective> findAllObjectives();
 
     Objective findObjective(Long id);
+
 }
