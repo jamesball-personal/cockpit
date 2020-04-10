@@ -14,14 +14,15 @@ repositories {
 }
 
 dependencies {
-    implementation group: "org.springframework.boot", name: "spring-boot-starter-web", version: "2.2.6.RELEASE"
-    implementation group: "org.springframework.boot", name: "spring-boot-starter-data-jpa", version: "2.2.6.RELEASE"
+    implementation group: "org.springframework.boot", name: "spring-boot-starter-actuator"
+    implementation group: "org.springframework.boot", name: "spring-boot-starter-web"
+    implementation group: "org.springframework.boot", name: "spring-boot-starter-data-jpa"
     implementation group: "com.graphql-java", name: "graphql-spring-boot-starter", version: "5.0.2"
     implementation group: "com.graphql-java", name: "graphql-java-tools", version: "5.2.4"
     implementation group: "com.graphql-java", name: "graphiql-spring-boot-starter", version: "5.0.2"
-    implementation group: "org.flywaydb", name: "flyway-core", version: "6.3.2"
+    implementation group: "org.flywaydb", name: "flyway-core"
     runtimeOnly group: "mysql", name: "mysql-connector-java", version: "8.0.19"
-    testImplementation group: "org.springframework.boot", name: "spring-boot-starter-test", version: "2.2.6.RELEASE", exclude: [
+    testImplementation group: "org.springframework.boot", name: "spring-boot-starter-test", exclude: [
             group: "org.junit.vintage", module: "junit-vintage-engine"
     ]
 }
