@@ -9,4 +9,5 @@ public class CockpitApplication {
     public static void main(String[] args) {
         SpringApplication.run(CockpitApplication.class, args);
     }
+
 }

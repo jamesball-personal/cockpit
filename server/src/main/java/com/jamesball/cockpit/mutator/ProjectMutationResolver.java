@@ -67,4 +67,5 @@ public class ProjectMutationResolver implements GraphQLMutationResolver {
             throw new PlanItemNotFoundException("Project Not Found", id);
         }
     }
+
 }

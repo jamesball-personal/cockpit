@@ -13,4 +13,5 @@ public class Metric extends PlanItem {
     public Metric(String name, String description, LifeCycleStatus lifeCycleStatus) {
         super(name, description, lifeCycleStatus);
     }
+
 }

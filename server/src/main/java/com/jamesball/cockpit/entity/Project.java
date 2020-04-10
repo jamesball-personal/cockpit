@@ -13,4 +13,5 @@ public class Project extends PlanItem {
     public Project(String name, String description, LifeCycleStatus lifeCycleStatus) {
         super(name, description, lifeCycleStatus);
     }
+
 }

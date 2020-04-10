@@ -30,4 +30,5 @@ public class ObjectiveQueryResolver implements GraphQLQueryResolver {
             throw new PlanItemNotFoundException("Objective Not Found", id);
         }
     }
+
 }

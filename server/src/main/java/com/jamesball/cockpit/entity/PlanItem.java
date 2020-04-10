@@ -58,4 +58,5 @@ public class PlanItem {
     public void setLifeCycleStatus(LifeCycleStatus lifeCycleStatus) {
         this.lifeCycleStatus = lifeCycleStatus;
     }
+
 }

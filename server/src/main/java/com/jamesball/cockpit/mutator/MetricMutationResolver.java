@@ -67,4 +67,5 @@ public class MetricMutationResolver implements GraphQLMutationResolver {
             throw new PlanItemNotFoundException("Metric Not Found", id);
         }
     }
+
 }

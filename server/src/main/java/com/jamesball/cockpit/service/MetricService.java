@@ -9,4 +9,5 @@ public interface MetricService {
     List<Metric> findAllMetrics();
 
     Metric findMetric(Long id);
+
 }
