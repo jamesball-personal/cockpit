@@ -50,17 +50,17 @@ type Mutation {
     deleteMetric(id: ID!): Boolean
     updateMetricName(id: ID!, newName: String!): Metric!
     updateMetricDescription(id: ID!, newDescription: String!): Metric!
-    updateMetricLifeCycleStatus(id: ID!, newLifeCycleStatus: String!): String!
+    updateMetricLifeCycleStatus(id: ID!, newLifeCycleStatus: LifeCycleStatus!): String!
 
     createObjective(name: String!, description: String, lifeCycleStatus: LifeCycleStatus!): Objective!
     deleteObjective(id: ID!): Boolean
     updateObjectiveName(id: ID!, newName: String!): Objective!
     updateObjectiveDescription(id: ID!, newDescription: String!): Objective!
-    updateObjectiveLifeCycleStatus(id: ID!, newLifeCycleStatus: String!): Objective!
+    updateObjectiveLifeCycleStatus(id: ID!, newLifeCycleStatus: LifeCycleStatus!): Objective!
 
     createProject(name: String!, description: String, lifeCycleStatus: LifeCycleStatus!): Project!
     deleteProject(id: ID!): Boolean
     updateProjectName(id: ID!, newName: String!): Project!
     updateProjectDescription(id: ID!, newDescription: String!): Project!
-    updateProjectLifeCycleStatus(id: ID!, newLifeCycleStatus: String!): Project!
+    updateProjectLifeCycleStatus(id: ID!, newLifeCycleStatus: LifeCycleStatus!): Project!
 }
