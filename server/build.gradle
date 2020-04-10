@@ -25,6 +25,7 @@ dependencies {
     testImplementation group: "org.springframework.boot", name: "spring-boot-starter-test", exclude: [
             group: "org.junit.vintage", module: "junit-vintage-engine"
     ]
+    testImplementation group: "com.graphql-java", name: "graphql-spring-boot-starter-test", version: "5.0.2"
 }
 
 //flyway {
