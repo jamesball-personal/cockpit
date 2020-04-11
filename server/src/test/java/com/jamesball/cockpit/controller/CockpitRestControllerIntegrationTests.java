@@ -40,4 +40,5 @@ public class CockpitRestControllerIntegrationTests {
         ResponseEntity<List> response = restTemplate.getForEntity("http://localhost:" + port + "/cockpit/project", List.class);
         assertEquals(response.getStatusCode(), HttpStatus.OK);
     }
+
 }

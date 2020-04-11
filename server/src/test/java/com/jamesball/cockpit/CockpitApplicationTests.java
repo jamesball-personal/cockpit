@@ -8,4 +8,5 @@ public class CockpitApplicationTests {
 
     @Test
     public void contextLoads() {}
+
 }

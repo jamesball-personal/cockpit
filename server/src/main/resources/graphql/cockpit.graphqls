@@ -39,8 +39,10 @@ type Project implements PlanItem {
 type Query {
     findAllMetrics: [Metric]!
     findMetric(id: ID!): Metric!
+
     findAllObjectives: [Objective]!
     findObjective(id: ID!): Objective!
+
     findAllProjects: [Project]!
     findProject(id: ID!): Project!
 }

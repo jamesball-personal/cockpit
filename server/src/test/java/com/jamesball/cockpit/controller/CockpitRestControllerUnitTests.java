@@ -57,4 +57,5 @@ public class CockpitRestControllerUnitTests {
                 .andExpect(content().json("[]"));
         verify(projectService, times(1)).findAllProjects();
     }
+
 }
