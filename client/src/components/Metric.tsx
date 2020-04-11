@@ -21,11 +21,11 @@ const useStyles = makeStyles({
 export const Metric: FunctionComponent = () => {
     const classes = useStyles();
     const findAllMetrics = useFindAllMetricsQuery();
-    if (findAllMetrics.loading || !findAllMetrics.data || !findAllMetrics.data.findAllMetrics) {
-        return <>Loading...</>;
-    }
     if (findAllMetrics.error) {
         return <>{findAllMetrics.error.message}</>;
+    }
+    if (findAllMetrics.loading || !findAllMetrics.data || !findAllMetrics.data.findAllMetrics) {
+        return <>Loading...</>;
     }
     return (
         <TableContainer>
