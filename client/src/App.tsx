@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {AppBar, Box, Tab, Tabs, Typography} from "@material-ui/core";
+import {Metric} from "./Metric";
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -37,7 +38,7 @@ function App() {
                 </Tabs>
             </AppBar>
             <TabPanel value={value} index={0}>
-                Item One
+                <Metric/>
             </TabPanel>
             <TabPanel value={value} index={1}>
                 Item Two
