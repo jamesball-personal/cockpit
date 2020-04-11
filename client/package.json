@@ -27,7 +27,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "codegen": "rm -rf src/types && mkdir -p src/types && apollo client:codegen --target typescript --localSchemaFile=src/schema.json --outputFlat src/types && rm src/types/globalTypes.ts",
+    "codegen": "rm -rf src/types && mkdir -p src/types && apollo client:codegen --target typescript --localSchemaFile=src/schema.json --outputFlat src/types",
     "download": "rm -f src/schema.json && apollo schema:download --endpoint http://localhost:8080/graphql src/schema.json"
   },
   "eslintConfig": {
