@@ -8,6 +8,7 @@ import {
     TableBody
 } from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
+import {useFindAllMetricsQuery} from "../queries/FindAllMetricsQuery";
 
 const useStyles = makeStyles({
     tableHeader: {
@@ -19,6 +20,13 @@ const useStyles = makeStyles({
 
 export const Metric: FunctionComponent = () => {
     const classes = useStyles();
+    const findAllMetrics = useFindAllMetricsQuery();
+    if (findAllMetrics.error) {
+        return <>{findAllMetrics.error.message}</>;
+    }
+    if (findAllMetrics.loading || !findAllMetrics.data || !findAllMetrics.data.findAllMetrics) {
+        return <>Loading...</>;
+    }
     return (
         <TableContainer>
             <Table>
@@ -30,16 +38,13 @@ export const Metric: FunctionComponent = () => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    <TableRow>
-                        <TableCell>Defects found</TableCell>
-                        <TableCell>How many defects were found?</TableCell>
-                        <TableCell>ACTIVE</TableCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableCell>Customers satisfied</TableCell>
-                        <TableCell>How many customers are satisfied with the product?</TableCell>
-                        <TableCell>CANCELLED</TableCell>
-                    </TableRow>
+                    {findAllMetrics.data.findAllMetrics.map(row => (
+                        <TableRow>
+                            <TableCell>{ row && row.name }</TableCell>
+                            <TableCell>{ row && row.description }</TableCell>
+                            <TableCell>{ row && row.lifeCycleStatus }</TableCell>
+                        </TableRow>
+                    ))}
                 </TableBody>
             </Table>
         </TableContainer>

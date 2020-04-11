@@ -1,0 +1,15 @@
+{
+  "name": "Cockpit GraphQL Schema",
+  "schemaPath": "./src/schema.json",
+  "extensions": {
+    "endpoints": {
+      "Default GraphQL Endpoint": {
+        "url": "http://localhost:8080/graphql",
+        "headers": {
+          "user-agent": "JS GraphQL"
+        },
+        "introspect": false
+      }
+    }
+  }
+}
