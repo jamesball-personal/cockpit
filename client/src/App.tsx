@@ -1,6 +1,6 @@
 import React from 'react';
 import { Home } from "./components/Home";
-import ApolloProvider from 'react-apollo/ApolloProvider';
+import { ApolloProvider } from 'react-apollo';
 import { ApolloProvider as ApolloHooksProvider } from '@apollo/react-hooks';
 import { client } from "./graphQL";
 
