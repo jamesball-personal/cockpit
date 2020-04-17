@@ -2,7 +2,7 @@ import gql from 'graphql-tag';
 import { useQuery } from "@apollo/react-hooks";
 import { FindAllMetrics } from "../types/FindAllMetrics";
 
-const QUERY = gql`
+export const QUERY = gql`
     query FindAllMetrics {
         findAllMetrics {
             id

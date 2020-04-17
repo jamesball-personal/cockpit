@@ -38,8 +38,8 @@ export const Metric: FunctionComponent = () => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {findAllMetrics.data.findAllMetrics.map(row => (
-                        <TableRow>
+                    {findAllMetrics.data.findAllMetrics.map((row, index) => (
+                        <TableRow key={(row && row.id) || index.toString()}>
                             <TableCell>{ row && row.name }</TableCell>
                             <TableCell>{ row && row.description }</TableCell>
                             <TableCell>{ row && row.lifeCycleStatus }</TableCell>
